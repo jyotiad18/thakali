@@ -6,7 +6,6 @@ const buttonCloseAbout = document.querySelector(".modal__close-aboutus");
 
 headerNav.forEach(function (item) {  
   item.addEventListener('click', event => {
-    event.preventDefault();
     switch (item.innerHTML)
     {
       case 'Menu':
@@ -19,22 +18,20 @@ headerNav.forEach(function (item) {
   })
 });
 
-buttonCloseMenu.addEventListener('click', event => {
-    event.preventDefault();    
+buttonCloseMenu.addEventListener('click', event => {  
     modalMenu.style.display = "none";
 })
 
 buttonCloseAbout.addEventListener('click', event => {
-    event.preventDefault();    
     modalAboutUs.style.display = "none";
 })
 
 
 var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
+xmlhttp.onreadystatechange = function () {
+  console.log('hello');
   if (this.readyState == 4 && this.status == 200) {
-    const resp = JSON.parse(this.responseText);
-    console.log(resp);
+    const resp = JSON.parse(this.responseText)    
     let otherMenus = document.querySelector('.content__othermenuset');
     resp.map((r) => {
       let divMenus = document.createElement('div');
@@ -69,5 +66,5 @@ xmlhttp.onreadystatechange = function() {
    
   }
 };
-xmlhttp.open("GET", "https://thakali-food.netlify.app/js/data.json", true);
+xmlhttp.open("GET", "./js/data.json", true);
 xmlhttp.send();
