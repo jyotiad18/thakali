@@ -158,11 +158,12 @@ a {
   margin-top: 10px;
 }
 
-.modal {
+.modalAboutus,
+.modalMenu {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 50px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -170,7 +171,6 @@ a {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-  border-radius: 12px;
 }
 
 /* Modal Content */
@@ -183,6 +183,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  border-radius: 12px;
 }
 
 #modalMenu > .modal__content {
@@ -190,7 +191,7 @@ a {
 }
 
 /* The Close Button */
-.modal__close {
+.modal__content > span {
   color: #fff;
   font-size: 28px;
   font-weight: bold;
@@ -201,6 +202,7 @@ a {
   background-color: #aaaaaa;
   border-radius: 12px;
   margin-left: auto;
+  cursor: pointer;
 }
 
 .modal__close:hover,
@@ -249,4 +251,49 @@ a {
   line-height: 42px;
   font-weight: 700px;
   text-transform: uppercase;
+}
+
+.content__othermenuset {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menus {
+  display: flex;
+  flex-direction: column;
+}
+
+.menus__type {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700px;
+  color: #fff;
+  background-color: darkgreen;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuItems {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid darkgreen;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.menuItem__title,
+.menuItem__price {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700px;
 }
