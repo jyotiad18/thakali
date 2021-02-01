@@ -34,6 +34,7 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     const resp = JSON.parse(this.responseText);
+    console.log(resp);
     let otherMenus = document.querySelector('.content__othermenuset');
     resp.map((r) => {
       let divMenus = document.createElement('div');
@@ -68,5 +69,5 @@ xmlhttp.onreadystatechange = function() {
    
   }
 };
-xmlhttp.open("GET", "./js/data.json", true);
+xmlhttp.open("GET", "https://thakali-food.netlify.app/js/data.json", true);
 xmlhttp.send();
